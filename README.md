@@ -31,6 +31,17 @@ M_err——MODIS sensor error,type float.
 Sample
 ----------
 ```c
+//const char* modFile1=argv[1];
+	//const char* tifFile1=argv[2];
+	//const char* modFile0=argv[3];
+	//const char* out=argv[4];
+	//int w=atoi(argv[5]);
+	//int classnum=atoi(argv[6]);
+    //  float L_err=atof(argv[7]);
+	//float M_err=atof(argv[8]);
+	//int A=atoi(argv[9]);
+	//int pf=atoi(argv[10]);
+	//int pc=atoi(argv[11]);
 const char* modFile1="D:\\data\\newdata\\MODO9A1.A2009249.dat";
 const char* tifFile1="D:\\data\\newdata\\2009-249-flaash.dat";
 const char* modFile0="D:\\data\\newdata\\MODO9A1.A2009329-0.dat";
