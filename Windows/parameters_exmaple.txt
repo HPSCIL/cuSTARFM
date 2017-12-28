@@ -1,0 +1,52 @@
+STARFM_PARAMETER_START
+
+# The number of input pairs of Landsat-MODIS images (>=1)
+  NUM_IN_PAIRS = 1
+
+# The pf band of Landsat
+  The_pf_band_of_Landsat_for_calculating = 3
+
+# The pc band of MODIS
+  The_pc_band_of_MODIS_for_calculating = 1
+
+# The input MODIS images 
+# When NUM_IN_PAIRS > 1, multiple images must be given
+# File names are separated by space
+  IN_PAIR_MODIS_FNAME = D:\cuda\shikong\testdata\M_2002_01_04.tif
+
+# The input Landsat images
+# When NUM_IN_PAIRS > 1, multiple images must be given
+# File names are separated by space
+  IN_PAIR_LANDSAT_FNAME = D:\cuda\shikong\testdata\L_2002_01_04.tif
+
+# The MODIS images for the prediction dates
+# Multiple images can be given
+# File names are separated by space
+  IN_PDAY_MODIS_FNAME = D:\cuda\shikong\testdata\M_2002_02_12.tif
+
+# The output synthetic prediction images
+# Multiple images can be given
+# File names are separated by space
+  OUT_PDAY_LANDSAT_FNAME = D:\cuda\shikong\testdata\str__2002_02_12.tif
+
+# The_width of searching_window
+  The_width_of_searching_window = 31
+
+# Assumed_number of classifications
+  Assumed_number_of_classifications = 4
+
+# The relative importance of space distance 
+  The_relative_importance_of_space_distance = 25
+
+# Landsat sensor error 
+  Landsat_sensor_error = 20
+
+# MODIS sensor error
+  MODIS_sensor_error = 50
+
+# Output image format (optional)
+# Will be used when the extension of the output files
+# is not given
+  G_Type = GTIff
+
+STARFM_PARAMETER_END
