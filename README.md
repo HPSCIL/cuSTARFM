@@ -44,12 +44,12 @@ Compilation
   2. Click menu Project -> Properties -> VC++ Directories -> Include Directories, and add the “include” directory of GDAL (e.g., C:\GDAL\include\)
   3. Click menu Project -> Properties -> VC++ Directories -> Lib Directories, and add the “lib” directory of GDAL (e.g., C:\GDAL\lib\)
   4. Click menu Build -> Build Solution  
-  Once successfully compiled, an executable file, cuSTARFM.exe, is created.
+ Once successfully compiled, an executable file, cuSTARFM.exe, is created.
 + For the Linux/Unix version (using the CUDA compiler --- nvcc)  
 In a Linux/Unix terminal, type in: 
   1. cd /the-directory-of-source-codes/
   2. nvcc -o cuSTARFM kernel.cu cuLayer.cpp cuSTARFM_util.cpp fusion.cpp -lgdal  
-  Once successfully compiled, an executable file, cuSTARFM, is created.
+ Once successfully compiled, an executable file, cuSTARFM, is created.
   
 Usage 
 ========
@@ -126,8 +126,9 @@ Landsat(pf) | 	MODIS(pc)
 
 + The program runs as a command line. You may use the Command (i.e., cmd) in Windows, or a terminal in Linux/Unix. 
    - For the Windows version:    
-   cuSTARFM.exe input.txt 
+   cuSTARFM.exe parameters.txt 
    - For the Linux/Unix version:   
-   ./cuSTARFM input.txt  
-  Note: The computational performance of cuSTARFM largely depends on the GPU. The more powerful is the GPU, the better performance. 
+   ./cuSTARFM parameters.txt  
+
++ Note: The computational performance of cuSTARFM largely depends on the GPU. The more powerful is the GPU, the better performance. 
 
