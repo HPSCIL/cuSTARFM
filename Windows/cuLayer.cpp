@@ -98,7 +98,17 @@ CuLayer::CuLayer()
 		}
 	}
 
+void CuLayer::setGeoTransform(double* adfGeoTransform)
+	{
+		if (adfGeoTransform == NULL)
+		{
+			//print("adfGeoTransform is null.");
+			exit(EXIT_FAILURE);
+		}
 
+		memcpy(m_adfGeoTransform, adfGeoTransform, sizeof(double) * 6);
+
+	}
 
 	CuLayer::CuLayer(const CuLayer &culayer)
 	{
