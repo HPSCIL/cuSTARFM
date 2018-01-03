@@ -459,6 +459,8 @@ void Re_fusion2(CuLayer *psensor,PARAMETER *par)
 		{
 			runtest(psensor[0].getData(),psensor[1].getData(),psensor[2*(par->NUM_PAIRS+c)].getData(),psensor[2*(par->NUM_PAIRS+c)+1].getData(),psensor[0].getHeight(),psensor[0].getWidth(),par->WIN_SIZE,par->L_ERR,par->M_ERR,par->class_num,par->A);
 			//char* driverName = "GTiff";
+			psensor[2*(par->NUM_PAIRS+c)+1].setGeoTransform(psensor[0].getGeoTransform());
+			psensor[2*(par->NUM_PAIRS+c)+1].setProjection(psensor[0].getProjection());
 			psensor[2*(par->NUM_PAIRS+c)+1].Write(psensor[2*(par->NUM_PAIRS+c)+1].outpath,par->G_Type);
 		}
 		else
@@ -489,11 +491,13 @@ void Re_fusion2(CuLayer *psensor,PARAMETER *par)
 					psensor[2*(par->NUM_PAIRS+c)+1].getData()[m*psensor[0].getWidth()+j]=single[m*psensor[0].getWidth()+j]/weight_all[m*psensor[0].getWidth()+j];
 				}
 			}
+			psensor[2*(par->NUM_PAIRS+c)+1].setGeoTransform(psensor[0].getGeoTransform());
+			psensor[2*(par->NUM_PAIRS+c)+1].setProjection(psensor[0].getProjection());
 			psensor[2*(par->NUM_PAIRS+c)+1].Write(psensor[2*(par->NUM_PAIRS+c)+1].outpath,par->G_Type);
 			delete []weight;
 			delete []weight_all;
 			delete []single;
 		}
 	}
-	 printf("GPU运行时间为：%dms\n", int(((double)(clock() - now1)) / CLOCKS_PER_SEC * 1000));
+	 printf("GPU脭脣脨脨脢卤录盲脦陋拢潞%dms\n", int(((double)(clock() - now1)) / CLOCKS_PER_SEC * 1000));
 }
