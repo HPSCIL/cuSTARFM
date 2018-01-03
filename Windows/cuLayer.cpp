@@ -150,7 +150,7 @@ CuLayer::CuLayer()
 		ReadDataSet->GetGeoTransform(this->m_adfGeoTransform);
 
 		m_noData = float(ReadDataSet->GetRasterBand(1)->GetNoDataValue());
-		//m_projection = ReadDataSet->GetProjectionRef();
+		m_projection = ReadDataSet->GetProjectionRef();
 
 		float *pImageBuf = NULL;
 		pImageBuf = new float[m_width*m_height];
