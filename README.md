@@ -19,13 +19,13 @@ Key features of cuSTARFM:
 +	Intakes any number of pairs of Landsat-MODIS images as the input
 + Outputs any number of prediction images
 + Supports a wide range of image formats (see http://gdal.org/formats_list.html)
-+ Includes a Windows version and a Linux/Unix version
++ Supports both Windows and Linux/Unix operating systems
 
 References
 ========
-+ Gao, F., Masek, J., Schwaller, M., and Hall, F. On the Blending of the Landsat and MODIS Surface Reflectance: Predict Daily Landsat Surface Reflectance, IEEE Transactions on Geoscience and Remote Sensing. 2006, 44(8):2207-2218.
-+ Gao, F., Hilker, T., Zhu, X., Anderson, M. A., Masek, J., Wang, P. and Yang, Y. Fusing Landsat and MODIS data for vegetation monitoring, IEEE Geoscience and Remote Sensing Magazine. 2015, 3(3):47-60. 
-+ Gao, F., Anderson, M., Zhang, X., Yang, Z., Alfieri, J., Kustas, W., Mueller, R., Johnson, D. and Prueger, J. Toward mapping crop progress at field scales through fusion of Landsat and MODIS imagery. Remote Sensing of Environment. 2017, 188:9-25
++ Gao, F.; Masek, J.; Schwaller, M. and Hall, F. On the Blending of the Landsat and MODIS Surface Reflectance: Predict Daily Landsat Surface Reflectance, IEEE Transactions on Geoscience and Remote Sensing. 2006, 44(8):2207-2218.
++ Gao, F.; Hilker, T.; Zhu, X.; Anderson, M. A.; Masek, J.; Wang, P. and Yang, Y. Fusing Landsat and MODIS data for vegetation monitoring, IEEE Geoscience and Remote Sensing Magazine. 2015, 3(3):47-60. 
++ Gao, F.; Anderson, M.; Zhang, X.; Yang, Z.; Alfieri, J.; Kustas, W.; Mueller, R.; Johnson, D. and Prueger, J. Toward mapping crop progress at field scales through fusion of Landsat and MODIS imagery. Remote Sensing of Environment. 2017, 188:9-25
 
 To Cite cuSTARFM in Publications
 ========
