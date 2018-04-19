@@ -39,13 +39,13 @@ Compilation
   -	A C/C++ compiler (e.g., Microsoft Visual Studio for Windows, and gcc/g++ for Linux/Unix) installed and tested
   -	Nvidia CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) installed and tested
   -	Geospatial Data Abstraction Library (GDAL, http://gdal.org) installed and tested
-+ For the Windows version (using MS Visual Studio as an example)
++ For the Windows operating system (using MS Visual Studio as an example)
   1. Open all the source codes in Visual Studio
   2. Click menu Project -> Properties -> VC++ Directories -> Include Directories, and add the “include” directory of GDAL (e.g., C:\GDAL\include\)
   3. Click menu Project -> Properties -> VC++ Directories -> Lib Directories, and add the “lib” directory of GDAL (e.g., C:\GDAL\lib\)
   4. Click menu Build -> Build Solution  
  Once successfully compiled, an executable file, cuSTARFM.exe, is created.
-+ For the Linux/Unix version (using the CUDA compiler --- nvcc)  
++ For the Linux/Unix operating system (using the CUDA compiler --- nvcc)  
 In a Linux/Unix terminal, type in: 
   - $ cd /the-directory-of-source-codes/
   - $ nvcc -o cuSTARFM kernel.cu cuLayer.cpp cuSTARFM_util.cpp fusion.cpp -lgdal  
