@@ -38,7 +38,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     return -1;
     }
 	fscanf(in, "%s", buffer);
-	if(stricmp(buffer, "STARFM_PARAMETER_START") != 0)
+	if(strcmp(buffer, "STARFM_PARAMETER_START") != 0)
 	{
     printf("This is not a valid input file\n");
     return -1;
@@ -49,7 +49,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 		nn++;
 		if(nn>1000)
 		{
-			cerr<<"ÅäÖÃÎÄ¼þÓ¦¸ÃÓÃSTARFM_PARAMETER_END½áÎ²"<<endl;
+			cerr<<"é…ç½®æ–‡ä»¶åº”è¯¥ç”¨STARFM_PARAMETER_ENDç»“å°¾"<<endl;
 				break;
 		}
 		memset(buffer,0,1000);
@@ -68,7 +68,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 				par->NUM_PAIRS = atoi(tokenptr);
 				if(par->NUM_PAIRS<=0)
 				{
-					cerr<<"²Î¿¼Ó°Ïñ¶ÔÓ¦´óÓÚ0"<<endl;
+					cerr<<"å‚è€ƒå½±åƒå¯¹åº”å¤§äºŽ0"<<endl;
 					return -1;
 				}
 			}
@@ -146,7 +146,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     {
 		if(psensor[0].getHeight()!=psensor[i].getHeight()||psensor[0].getWidth()!=psensor[i].getWidth())
 		{
-			cerr<<"ÊäÈëÓ°ÏñÍ¼·ù·¶Î§²»Æ¥Åä"<<endl;
+			cerr<<"è¾“å…¥å½±åƒå›¾å¹…èŒƒå›´ä¸åŒ¹é…"<<endl;
 			return -1;
 		}
 	}
