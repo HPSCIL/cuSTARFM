@@ -1,0 +1,29 @@
+STARFM_PARAMETER_START
+# number of input pairs of fine and coarse resolution image
+  NUM_IN_PAIRS = 1
+# The pf band of Landsat for calculating
+  The_pf_band_of_Landsat_for_calculating=3
+# The pc band of Landsat for calculating
+  The_pc_band_of_MODIS_for_calculating=1
+# input coarse resolution data
+  IN_PAIR_MODIS_FNAME = D:\data\newdata\MODO9A1.A2009249.dat
+# input fine resolution data
+  IN_PAIR_LANDSAT_FNAME = D:\data\newdata\2009-249-flaash.dat
+# coarse resolution data for the prediction day
+  IN_PDAY_MODIS_FNAME = D:\data\newdata\MODO9A1.A2009329-0.dat
+# the output fine resolution prediction 
+  OUT_PDAY_LANDSAT_FNAME = D:\data\newdata\2009-329new-flaash-test2.tif
+# The_width of searching_window
+  The_width_of_searching_window = 31
+# Assumed_number of classifications
+  Assumed_number_of_classifications = 4
+# The relative importance of space distance 
+  The_relative_importance_of_space_distance = 25
+# Landsat sensor error 
+  Landsat_sensor_error = 20
+  
+  
+  
+# MODIS sensor error
+  MODIS_sensor_error = 50
+STARFM_PARAMETER_END
