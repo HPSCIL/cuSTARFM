@@ -31,13 +31,14 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
   string t;
   char  *separator = "= ,";
   FILE  *in;  
+  char *token = NULL;
 	//char  buffer[1000] = "\0";
-	if((in=fopen(fname,"r"))==NULL) 
+	if((fopen_s(&in,fname,"r"))!=0) 
 	{
     printf("Can't open input %s\n", fname);
     return -1;
     }
-	fscanf(in, "%s", buffer);
+	fscanf_s(in, "%s", buffer,1000);
 	if(strcmp(buffer, "STARFM_PARAMETER_START") != 0)
 	{
     printf("This is not a valid input file\n");
@@ -57,12 +58,12 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 			continue;
 		if(strcmp(buffer, "STARFM_PARAMETER_END") == 0) 
 			break;
-		tokenptr = strtok(buffer, separator);
+		tokenptr = strtok_s(buffer, separator,&token);
 		label=tokenptr;
 		if(strcmp(label,"#") == 0) continue;
 		while(tokenptr != NULL) 
 		{
-			tokenptr = strtok(NULL, separator);
+			tokenptr = strtok_s(NULL, separator, &token);
 			if(strcmp(label, "NUM_IN_PAIRS") == 0) 
 			{
 				par->NUM_PAIRS = atoi(tokenptr);
@@ -75,30 +76,30 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 			else if(strcmp(label, "The_pf_band_of_Landsat_for_calculating") == 0)
 				par->pf=atoi(tokenptr);
 			else if(strcmp(label, "G_Type") == 0)
-				sscanf(tokenptr, "%s",par->G_Type);
+				sscanf_s(tokenptr, "%s",par->G_Type,50);
 			else if(strcmp(label, "The_pc_band_of_MODIS_for_calculating") == 0)
 				par->pc=atoi(tokenptr);
 			else if(strcmp(label, "IN_PAIR_LANDSAT_FNAME") == 0)
 				for(i=0; i<par->NUM_PAIRS; i++) 
 				{
-					sscanf(tokenptr, "%s",readpath);
+					sscanf_s(tokenptr, "%s",readpath,1000);
 					psensor[i].Read(readpath,par->pf);
-					tokenptr = strtok(NULL, separator);
+					tokenptr = strtok_s(NULL, separator,&token);
 				}
 			else if(strcmp(label, "IN_PAIR_MODIS_FNAME") == 0)
 				for(i=par->NUM_PAIRS; i<2*par->NUM_PAIRS; i++) 
 				{
-					sscanf(tokenptr, "%s", readpath);
+					sscanf_s(tokenptr, "%s", readpath,1000);
 					psensor[i].Read(readpath,par->pc);
-					tokenptr = strtok(NULL, separator);
+					tokenptr = strtok_s(NULL, separator,&token);
 				}
 			else if(strcmp(label, "IN_PDAY_MODIS_FNAME") == 0)
 			{
 				k = 0;
 				do 
 				{
-				 sscanf(tokenptr, "%s", readpath);
-				 tokenptr = strtok(NULL, separator);
+				 sscanf_s(tokenptr, "%s", readpath,1000);
+				 tokenptr = strtok_s(NULL, separator, &token);
 				 psensor[2*(par->NUM_PAIRS+k)].Read(readpath,par->pc);
 				 k++;
 				}while(tokenptr != NULL);
@@ -115,9 +116,9 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 				k = 0;
 				do
 				{
-				sscanf(tokenptr, "%s",  psensor[2*(par->NUM_PAIRS+k)+1].outpath);
+				sscanf_s(tokenptr, "%s",  psensor[2*(par->NUM_PAIRS+k)+1].outpath,1000);
 				//psensor[2*par->NUM_PAIRS+1].resize(psensor[0].getWidth(),psensor[0].getHeight());
-				 tokenptr = strtok(NULL, separator);
+				 tokenptr = strtok_s(NULL, separator,&token);
 				k++;
 				}while(tokenptr != NULL);
 				if(par->NUM_PREDICTIONS == 0)
@@ -146,7 +147,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     {
 		if(psensor[0].getHeight()!=psensor[i].getHeight()||psensor[0].getWidth()!=psensor[i].getWidth())
 		{
-			cerr<<"输入影像图幅范围不匹配"<<endl;
+			cerr<<""<<endl;
 			return -1;
 		}
 	}
