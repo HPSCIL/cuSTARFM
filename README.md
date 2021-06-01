@@ -30,7 +30,8 @@ References
 To Cite cuSTARFM in Publications
 ========
 + A paper describing cuSTARFM will be submitted to a scientific journal for publication soon
-+	For now, you may just cite the URL of the source codes of cuSTARFM (https://github.com/HPSCIL/cuSTARFM) in your publications
++	For now, Please cite the following reference:
+Gao, H., Zhu, X., Guan, Q., Yang, X., Yao, Y., Zeng, W., Peng, X., 2021. cuFSDAF: An Enhanced Flexible Spatiotemporal Data Fusion Algorithm Parallelized Using Graphics Processing Units. IEEE Transactions on Geoscience and Remote Sensing. https://doi.org/10.1109/TGRS.2021.3080384
 
 Compilation
 ========
